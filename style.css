@@ -89,7 +89,7 @@ header {
 }
 
 button[disabled] {
-  cursor: default;
+  cursor: pointer;
   background: #c0c7cf;
 }
 

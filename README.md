@@ -2,7 +2,7 @@
 
 ## Description
 
-For this assignment I was tasked with using a starter code to finish creating a random password generator. For this assignment I will be using Javascript to complete the tasks. 
+For this assignment I was tasked with using a starter code to finish creating a random password generator. For this assignment I will be using Javascript to complete the tasks.
 
 ## Installation
 
@@ -10,7 +10,7 @@ N/A
 
 ## Usage
 
-This application will be used by the user so a random password can be created easily. This will help the user with security on their local device. 
+This application will be used by the user so a random password can be created easily. This will help the user with security on their local device.
 
 ## Credits
 
@@ -20,7 +20,7 @@ N/A
 
 Please refer to the LICENSE in the repo.
 
-## Criteria for assignment:
+## Criteria for assignment
 
 GIVEN I need a new, secure password
 
@@ -44,3 +44,7 @@ GIVEN I need a new, secure password
 
 *WHEN the password is generated*
 **THEN the password is either displayed in an alert or written to the page**
+
+## Website Link
+
+## Repository Link
