@@ -56,38 +56,21 @@ const passGenerate = () => {
 
 function passVerify(){
   tentativePassword = passGenerate();
-  console.log(tentativePassword)
+  // console.log(tentativePassword)
   if (hasLowercase) {
     var verifiedLower = false;
     for (var index = 0; index < passLength; index++) {
       var possibleLower = tentativePassword[index];
       if (
-        possibleLower == "a" ||
-        possibleLower == "b" ||
-        possibleLower == "c" ||
-        possibleLower == "d" ||
-        possibleLower == "e" ||
-        possibleLower == "f" ||
-        possibleLower == "g" ||
-        possibleLower == "h" ||
-        possibleLower == "i" ||
-        possibleLower == "j" ||
-        possibleLower == "k" ||
-        possibleLower == "l" ||
-        possibleLower == "m" ||
-        possibleLower == "n" ||
-        possibleLower == "o" ||
-        possibleLower == "p" ||
-        possibleLower == "q" ||
-        possibleLower == "r" ||
-        possibleLower == "s" ||
-        possibleLower == "t" ||
-        possibleLower == "u" ||
-        possibleLower == "v" ||
-        possibleLower == "w" ||
-        possibleLower == "x" ||
-        possibleLower == "y" ||
-        possibleLower == "z") {
+        possibleLower == "a" || possibleLower == "b" || possibleLower == "c" ||
+        possibleLower == "d" || possibleLower == "e" || possibleLower == "f" ||
+        possibleLower == "g" || possibleLower == "h" || possibleLower == "i" ||
+        possibleLower == "j" || possibleLower == "k" || possibleLower == "l" ||
+        possibleLower == "m" || possibleLower == "n" || possibleLower == "o" ||
+        possibleLower == "p" || possibleLower == "q" || possibleLower == "r" ||
+        possibleLower == "s" || possibleLower == "t" || possibleLower == "u" ||
+        possibleLower == "v" || possibleLower == "w" || possibleLower == "x" ||
+        possibleLower == "y" || possibleLower == "z") {
         verifiedLower = true;
       }
     }
@@ -101,16 +84,9 @@ function passVerify(){
     var verifiedSym = false;
     for (var index = 0; index < passLength; index++) {
       var possibleSym = tentativePassword[index];
-      if (
-        possibleSym == "!" ||
-        possibleSym == "@" ||
-        possibleSym == "#" ||
-        possibleSym == "$" ||
-        possibleSym == "%" ||
-        possibleSym == "^" ||
-        possibleSym == "&" ||
-        possibleSym == "*" ||
-        possibleSym == "(" ||
+      if (possibleSym == "!" || possibleSym == "@" || possibleSym == "#" ||
+        possibleSym == "$" || possibleSym == "%" || possibleSym == "^" ||
+        possibleSym == "&" || possibleSym == "*" || possibleSym == "(" ||
         possibleSym == ")") {
         verifiedSym = true;
       }

@@ -23,10 +23,7 @@ for (var i = 0; i < = passwordLength; i++) {
 
 function generate() {
   passwordLength = parseInt(
-    prompt(
-      "How many characters would you like the password to be? Choose between 8 & 128"
-    )
-  );
+    prompt("How many characters would you like the password to be? Choose between 8 & 128"));
   console.log("Passowrd length " + passwordLength);
 
   var numbers = confirm("Would you like to include numbers?");
