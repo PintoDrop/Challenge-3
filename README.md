@@ -55,4 +55,4 @@ GIVEN I need a new, secure password
 
 ## Screen Shots
 
-![Deployed Website](/images/Deplyed-website.jpg)
+![Deployed Website](./images/Deplyed-website.JPG)
