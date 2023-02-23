@@ -55,12 +55,11 @@ const passGenerate = () => {
 };
 
 function passVerify(){
-  tentativePassword = passGenerate();
-  // console.log(tentativePassword)
+  genratedPassword = passGenerate();
   if (hasLowercase) {
     var verifiedLower = false;
     for (var index = 0; index < passLength; index++) {
-      var possibleLower = tentativePassword[index];
+      var possibleLower = genratedPassword[index];
       if (
         possibleLower == "a" || possibleLower == "b" || possibleLower == "c" ||
         possibleLower == "d" || possibleLower == "e" || possibleLower == "f" ||
@@ -83,7 +82,7 @@ function passVerify(){
   if (hasSymbols) {
     var verifiedSym = false;
     for (var index = 0; index < passLength; index++) {
-      var possibleSym = tentativePassword[index];
+      var possibleSym = genratedPassword[index];
       if (possibleSym == "!" || possibleSym == "@" || possibleSym == "#" ||
         possibleSym == "$" || possibleSym == "%" || possibleSym == "^" ||
         possibleSym == "&" || possibleSym == "*" || possibleSym == "(" ||
@@ -96,15 +95,11 @@ function passVerify(){
       passVerify();
     }
   }
-  console.log("tentative", password)
-  return tentativePassword
-};
-
 
 if (hasNumbers) {
   var verifiedNumbers = false;
   for (var index = 0; index < passLength; index++) {
-    var possibleNumbers = tentativePassword[index];
+    var possibleNumbers = genratedPassword[index];
     if (possibleNumbers == "1" || possibleNumbers == "2" || possibleNumbers == "3" || possibleNumbers == "4" || possibleNumbers == "5" || possibleNumbers == "6" || possibleNumbers == "7" || possibleNumbers == "8" || possibleNumbers == "9" || possibleNumbers == "0") {
       verifiedNumbers = true;
     }
@@ -118,7 +113,7 @@ if (hasNumbers) {
 if (hasUppercase) {
   var verifiedUpper = false;
   for (var index = 0; index < passLength; index++) {
-    var possibleUpper = tentativePassword[index];
+    var possibleUpper = genratedPassword[index];
     console.log(possibleUpper);
     if (possibleUpper == "A" || possibleUpper == "B" || possibleUpper == "C" || possibleUpper == "D" || possibleUpper == "E" || possibleUpper == "F" || possibleUpper == "G" || possibleUpper == "H" || possibleUpper == "I" || possibleUpper == "J" || possibleUpper == "K" || possibleUpper == "L" || possibleUpper == "M" || possibleUpper == "N" || possibleUpper == "O" || possibleUpper == "P" || possibleUpper == "Q" || possibleUpper == "R" || possibleUpper == "S" || possibleUpper == "T" || possibleUpper == "U" || possibleUpper == "V" || possibleUpper == "W" || possibleUpper == "X" || possibleUpper == "Y" ||possibleUpper == "Z") {
       verifiedUpper = true;
@@ -129,6 +124,10 @@ if (hasUppercase) {
     passVerify();
   }
 }
+
+console.log("Generated password: ", genratedPassword);
+  return genratedPassword;
+};
 
 document.getElementById("generate").addEventListener("click", () => {
   passPrompt();
