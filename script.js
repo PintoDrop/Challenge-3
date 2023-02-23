@@ -20,29 +20,32 @@ for (var i = 0; i < = passwordLength; i++) {
 
   var length = parseInt(prompt('Desired Length'));
   */
- 
- function generate(){
-   passwordLength = parseInt(prompt("How many characters would you like the password to be? Choose between 8 & 128"))
-   console.log("Passowrd length" + passwordLength);
 
-   if (!passwordLength) {
-     alert("Required value");
-   } else if (passwordLength < 8 || passwordLength > 128);
-   
-   var numbers = confirm('Would you like to include numbers?');
-   console.log("Number " + confirmNumber);
+function generate() {
+  passwordLength = parseInt(
+    prompt(
+      "How many characters would you like the password to be? Choose between 8 & 128"
+    )
+  );
+  console.log("Passowrd length " + passwordLength);
 
-   var uppercase = confirm('Would you like to include uppercase letters?');
-   console.log("Uppercase" + confirmUpper);
+  var numbers = confirm("Would you like to include numbers?");
+  console.log("Number " + confirmNumber);
 
-   var lowercase = confirm("Would you like to include lowercase letters?");
-   console.log("Lowercase" + confirmLower);
+  var uppercase = confirm("Would you like to include uppercase letters?");
+  console.log("Uppercase " + confirmUpper);
 
-   var symbols = confirm('Would you like to include special characters?');
-   console.log("Symbols" + confirmSpecial);
-   console.log(passwordLength, numbers, uppercase, lowercase, symbols)
+  var lowercase = confirm("Would you like to include lowercase letters?");
+  console.log("Lowercase " + confirmLower);
 
-  
+  var symbols = confirm("Would you like to include special characters?");
+  console.log("Symbols " + confirmSpecial);
+  console.log(passwordLength, numbers, uppercase, lowercase, symbols);
+  if (!passwordLength) {
+  }
+  if (isNaN(passwordLength) == true || passwordLength < 8 || passwordLength > 128);
+  alert("Password must be between 8 & 128 characters");
+
   var passwordOptions = {
     length,
     numbers,
@@ -94,7 +97,34 @@ function generatePassword() {
   }
 
   if (passwordOptions.lowercase === true) {
-    characters += ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    characters += [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l",
+      "m",
+      "n",
+      "o",
+      "p",
+      "q",
+      "r",
+      "s",
+      "t",
+      "u",
+      "v",
+      "w",
+      "x",
+      "y",
+      "z",
+    ];
   }
 
   if (passwordOptions.symbols === true) {
@@ -112,21 +142,21 @@ function generatePassword() {
   }
   return passwordArray.join("");
 }
-  
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 var passwordLength;
-var confirmLower; 
+var confirmLower;
 var confirmUpper;
 var confirmNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var confirmSpecial;
 var userChoices;
 
-var lowercase = ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
-var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+// var lowercase = ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+// var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+// var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 var blankUpper = [];
 var toUpper = function (x) {
@@ -143,4 +173,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
