@@ -45,6 +45,10 @@ GIVEN I need a new, secure password
 *WHEN the password is generated*
 **THEN the password is either displayed in an alert or written to the page**
 
+## Repository Link
+
+[Github](https://github.com/PintoDrop/Challenge-3)
+
 ## Website Link
 
-## Repository Link
+[Password Generator](https://pintodrop.github.io/Challenge-3/)

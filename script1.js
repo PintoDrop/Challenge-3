@@ -1,8 +1,8 @@
-let passLength;
-let hasNumbers;
-let hasUppercase;
-let hasLowercase;
-let hasSymbols;
+var passLength;
+var hasNumbers;
+var hasUppercase;
+var hasLowercase;
+var hasSymbols;
 
 const passPrompt = () => {
   passLength = parseInt(prompt("How many characters would you like the password to be? Choose between 8 & 128"));
@@ -23,12 +23,12 @@ const passPrompt = () => {
 };
 
 const passGenerate = () => {
-  let lowerString = "abcdefghijklmnopqrstuvwxyz";
-  let upperString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  let numString = "0123456789";
-  let symbolString = "!@#$%^&*()";
-  let chosenString = "";
-  let password = "";
+  var lowerString = "abcdefghijklmnopqrstuvwxyz";
+  var upperString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numString = "0123456789";
+  var symbolString = "!@#$%^&*()";
+  var chosenString = "";
+  var password = "";
 
   if (hasLowercase === true) {
     chosenString += lowerString;
@@ -44,9 +44,9 @@ const passGenerate = () => {
   }
   console.log(chosenString);
 
-  for (let index = 0; index < passLength; index++) {
-    let randomIndex = Math.floor(Math.random() * chosenString.length);
-    let randomChar = chosenString[randomIndex];
+  for (var index = 0; index < passLength; index++) {
+    var randomIndex = Math.floor(Math.random() * chosenString.length);
+    var randomChar = chosenString[randomIndex];
     console.log(randomChar);
     password = password + randomChar;
   }
@@ -58,9 +58,9 @@ function passVerify(){
   tentativePassword = passGenerate();
   console.log(tentativePassword)
   if (hasLowercase) {
-    let verifiedLower = false;
-    for (let index = 0; index < passLength; index++) {
-      let possibleLower = tentativePassword[index];
+    var verifiedLower = false;
+    for (var index = 0; index < passLength; index++) {
+      var possibleLower = tentativePassword[index];
       if (
         possibleLower == "a" ||
         possibleLower == "b" ||
@@ -98,9 +98,9 @@ function passVerify(){
   }
 
   if (hasSymbols) {
-    let verifiedSym = false;
-    for (let index = 0; index < passLength; index++) {
-      let possibleSym = tentativePassword[index];
+    var verifiedSym = false;
+    for (var index = 0; index < passLength; index++) {
+      var possibleSym = tentativePassword[index];
       if (
         possibleSym == "!" ||
         possibleSym == "@" ||
@@ -126,9 +126,9 @@ function passVerify(){
 
 
 if (hasNumbers) {
-  let verifiedNumbers = false;
-  for (let index = 0; index < passLength; index++) {
-    let possibleNumbers = tentativePassword[index];
+  var verifiedNumbers = false;
+  for (var index = 0; index < passLength; index++) {
+    var possibleNumbers = tentativePassword[index];
     if (possibleNumbers == "1" || possibleNumbers == "2" || possibleNumbers == "3" || possibleNumbers == "4" || possibleNumbers == "5" || possibleNumbers == "6" || possibleNumbers == "7" || possibleNumbers == "8" || possibleNumbers == "9" || possibleNumbers == "0") {
       verifiedNumbers = true;
     }
@@ -140,9 +140,9 @@ if (hasNumbers) {
 }
 
 if (hasUppercase) {
-  let verifiedUpper = false;
-  for (let index = 0; index < passLength; index++) {
-    let possibleUpper = tentativePassword[index];
+  var verifiedUpper = false;
+  for (var index = 0; index < passLength; index++) {
+    var possibleUpper = tentativePassword[index];
     console.log(possibleUpper);
     if (possibleUpper == "A" || possibleUpper == "B" || possibleUpper == "C" || possibleUpper == "D" || possibleUpper == "E" || possibleUpper == "F" || possibleUpper == "G" || possibleUpper == "H" || possibleUpper == "I" || possibleUpper == "J" || possibleUpper == "K" || possibleUpper == "L" || possibleUpper == "M" || possibleUpper == "N" || possibleUpper == "O" || possibleUpper == "P" || possibleUpper == "Q" || possibleUpper == "R" || possibleUpper == "S" || possibleUpper == "T" || possibleUpper == "U" || possibleUpper == "V" || possibleUpper == "W" || possibleUpper == "X" || possibleUpper == "Y" ||possibleUpper == "Z") {
       verifiedUpper = true;
@@ -156,6 +156,6 @@ if (hasUppercase) {
 
 document.getElementById("generate").addEventListener("click", () => {
   passPrompt();
-  let newPassword = passVerify();
+  var newPassword = passVerify();
   document.getElementById("password").innerHTML = newPassword;
 });
