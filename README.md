@@ -2,7 +2,7 @@
 
 ## Description
 
-For this assignment I was tasked with using a starter code to finish creating a random password generator. For this assignment I used javascript to complete the assignment. This task would be very useful to achieve to learn how to make a function for the user to use in their everyday life.
+For this assignment I was tasked with using a starter code to finish creating a random password generator. I used javascript to complete the assignment. This task would be very useful to achieve to learn how to make a function for the user to use in their everyday life. I was able to make it so the user could enter the desired characters they wanted to use including uppercase, numbers, symbols & lowercase. I was able to keep the parameters of the password length between 8 and 128 characters. If the user entered something lower or higher than these numbers then it would give them an alert of what went wrong and able to try again. This also works if any letters or symbols are entered as well.
 
 ## Installation
 
@@ -55,4 +55,4 @@ GIVEN I need a new, secure password
 
 ## Screen Shots
 
-[Deployed Website](/images/Deplyed-website.jpg)
+![Deployed Website](/images/Deplyed-website.jpg)

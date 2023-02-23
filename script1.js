@@ -11,8 +11,8 @@ const passPrompt = () => {
       alert("Password must be between 8 & 128 characters");
       passPrompt();
       return;
-    }
       
+    }
       hasNumbers = confirm("Would you like to include numbers?");
       console.log("Number " + hasNumbers);
       hasUppercase = confirm("Would you like to include uppercase letters?");
@@ -48,9 +48,9 @@ const passGenerate = () => {
 
   for (var index = 0; index < passLength; index++) {
     var randomIndex = Math.floor(Math.random() * chosenString.length);
-    var randomChar = chosenString[randomIndex];
-    console.log(randomChar);
-    password = password + randomChar;
+    var randomSym = chosenString[randomIndex];
+    console.log(randomSym);
+    password = password + randomSym;
   }
   console.log(password);
   return password;
@@ -62,8 +62,7 @@ function passVerify(){
     var verifiedLower = false;
     for (var index = 0; index < passLength; index++) {
       var possibleLower = genratedPassword[index];
-      if (
-        possibleLower == "a" || possibleLower == "b" || possibleLower == "c" ||
+      if (possibleLower == "a" || possibleLower == "b" || possibleLower == "c" ||
         possibleLower == "d" || possibleLower == "e" || possibleLower == "f" ||
         possibleLower == "g" || possibleLower == "h" || possibleLower == "i" ||
         possibleLower == "j" || possibleLower == "k" || possibleLower == "l" ||
