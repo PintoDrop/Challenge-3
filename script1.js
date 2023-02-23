@@ -7,30 +7,19 @@ let hasSymbols;
 const passPrompt = () => {
   passLength = parseInt(prompt("How many characters would you like the password to be? Choose between 8 & 128"));
   console.log("Password length " + passLength);
-
-//   if (!passLength) {
-//   alert("test");
-
-// } if (isNaN(passLength) == false || passLength < 8 || passLength > 128){
-//   passLength = alert("Password must be between 8 & 128 characters");
-// }
-
-  hasNumbers = confirm("Would you like to include numbers?");
-  console.log("Number " + hasNumbers);
-  hasUppercase = confirm("Would you like to include uppercase letters?");
-  console.log("Uppercase " + hasUppercase);
-  hasLowercase = confirm("Would you like to include lowercase letters?");
-  console.log("Lowercase " + hasLowercase);
-  hasSymbols = confirm("Would you like to include special characters?");
-  console.log("Symbols " + hasSymbols);
-  console.log(passLength, hasNumbers, hasUppercase, hasLowercase, hasSymbols);
-
-  if (isNaN(passLength) == true || passLength < 8 || passLength > 128);
-  {
-    alert("Password must be between 8 & 128 characters");
-  }
-    // passPrompt();
-  
+    if (isNaN(passLength) == true || passLength < 8 || passLength > 128) {
+      alert("Password must be between 8 & 128 characters");
+    }
+      
+      hasNumbers = confirm("Would you like to include numbers?");
+      console.log("Number " + hasNumbers);
+      hasUppercase = confirm("Would you like to include uppercase letters?");
+      console.log("Uppercase " + hasUppercase);
+      hasLowercase = confirm("Would you like to include lowercase letters?");
+      console.log("Lowercase " + hasLowercase);
+      hasSymbols = confirm("Would you like to include special characters?");
+      console.log("Symbols " + hasSymbols);
+      console.log(passLength, hasNumbers, hasUppercase, hasLowercase, hasSymbols);  
 };
 
 const passGenerate = () => {
@@ -57,7 +46,6 @@ const passGenerate = () => {
 
   for (let index = 0; index < passLength; index++) {
     let randomIndex = Math.floor(Math.random() * chosenString.length);
-    // console.log(randomIndex)
     let randomChar = chosenString[randomIndex];
     console.log(randomChar);
     password = password + randomChar;
@@ -66,16 +54,13 @@ const passGenerate = () => {
   return password;
 };
 
-// let tentativePassword;
 function passVerify(){
-// const passVerify = () => {
   tentativePassword = passGenerate();
   console.log(tentativePassword)
   if (hasLowercase) {
     let verifiedLower = false;
     for (let index = 0; index < passLength; index++) {
       let possibleLower = tentativePassword[index];
-      // console.log("possible lowercase" + possibleLower);
       if (
         possibleLower == "a" ||
         possibleLower == "b" ||
@@ -102,8 +87,7 @@ function passVerify(){
         possibleLower == "w" ||
         possibleLower == "x" ||
         possibleLower == "y" ||
-        possibleLower == "z"
-      ) {
+        possibleLower == "z") {
         verifiedLower = true;
       }
     }
@@ -117,7 +101,6 @@ function passVerify(){
     let verifiedSym = false;
     for (let index = 0; index < passLength; index++) {
       let possibleSym = tentativePassword[index];
-      // console.log(possibleSym)
       if (
         possibleSym == "!" ||
         possibleSym == "@" ||
@@ -128,8 +111,7 @@ function passVerify(){
         possibleSym == "&" ||
         possibleSym == "*" ||
         possibleSym == "(" ||
-        possibleSym == ")"
-      ) {
+        possibleSym == ")") {
         verifiedSym = true;
       }
     }
@@ -142,14 +124,11 @@ function passVerify(){
   return tentativePassword
 };
 
-// let password=passVerify()
-
 
 if (hasNumbers) {
   let verifiedNumbers = false;
   for (let index = 0; index < passLength; index++) {
     let possibleNumbers = tentativePassword[index];
-    // console.log(possibleNumbers)
     if (possibleNumbers == "1" || possibleNumbers == "2" || possibleNumbers == "3" || possibleNumbers == "4" || possibleNumbers == "5" || possibleNumbers == "6" || possibleNumbers == "7" || possibleNumbers == "8" || possibleNumbers == "9" || possibleNumbers == "0") {
       verifiedNumbers = true;
     }
@@ -178,7 +157,5 @@ if (hasUppercase) {
 document.getElementById("generate").addEventListener("click", () => {
   passPrompt();
   let newPassword = passVerify();
-  // console.log(newPassword);
   document.getElementById("password").innerHTML = newPassword;
-  // return tentativePassword
 });
