@@ -6,22 +6,31 @@ let hasSymbols;
 
 const passPrompt = () => {
   passLength = parseInt(prompt("How many characters would you like the password to be? Choose between 8 & 128"));
-  // console.log("Passowrd length " + passLength);
-  hasNumbers = confirm("Would you like to include numbers?");
-  // console.log("Number " + confirmNumber);
-  hasUppercase = confirm("Would you like to include uppercase letters?");
-  // console.log("Uppercase " + confirmUpper);
-  hasLowercase = confirm("Would you like to include lowercase letters?");
-  // console.log("Lowercase " + confirmLower);
-  hasSymbols = confirm("Would you like to include special characters?");
-  // console.log("Symbols " + confirmSpecial);
+  console.log("Password length " + passLength);
 
+//   if (!passLength) {
+//   alert("test");
+
+// } if (isNaN(passLength) == false || passLength < 8 || passLength > 128){
+//   passLength = alert("Password must be between 8 & 128 characters");
+// }
+
+  hasNumbers = confirm("Would you like to include numbers?");
+  console.log("Number " + hasNumbers);
+  hasUppercase = confirm("Would you like to include uppercase letters?");
+  console.log("Uppercase " + hasUppercase);
+  hasLowercase = confirm("Would you like to include lowercase letters?");
+  console.log("Lowercase " + hasLowercase);
+  hasSymbols = confirm("Would you like to include special characters?");
+  console.log("Symbols " + hasSymbols);
   console.log(passLength, hasNumbers, hasUppercase, hasLowercase, hasSymbols);
+
   if (isNaN(passLength) == true || passLength < 8 || passLength > 128);
   {
     alert("Password must be between 8 & 128 characters");
-    // passPrompt();
   }
+    // passPrompt();
+  
 };
 
 const passGenerate = () => {
@@ -66,7 +75,7 @@ function passVerify(){
     let verifiedLower = false;
     for (let index = 0; index < passLength; index++) {
       let possibleLower = tentativePassword[index];
-      console.log(possibleLower);
+      // console.log("possible lowercase" + possibleLower);
       if (
         possibleLower == "a" ||
         possibleLower == "b" ||
@@ -105,26 +114,26 @@ function passVerify(){
   }
 
   if (hasSymbols) {
-    let verifiedSpecChars = false;
+    let verifiedSym = false;
     for (let index = 0; index < passLength; index++) {
-      let possibleSpec = tentativePassword[index];
-      // console.log(possibleSpec)
+      let possibleSym = tentativePassword[index];
+      // console.log(possibleSym)
       if (
-        possibleSpec == "!" ||
-        possibleSpec == "@" ||
-        possibleSpec == "#" ||
-        possibleSpec == "$" ||
-        possibleSpec == "%" ||
-        possibleSpec == "^" ||
-        possibleSpec == "&" ||
-        possibleSpec == "*" ||
-        possibleSpec == "(" ||
-        possibleSpec == ")"
+        possibleSym == "!" ||
+        possibleSym == "@" ||
+        possibleSym == "#" ||
+        possibleSym == "$" ||
+        possibleSym == "%" ||
+        possibleSym == "^" ||
+        possibleSym == "&" ||
+        possibleSym == "*" ||
+        possibleSym == "(" ||
+        possibleSym == ")"
       ) {
-        verifiedSpecChars = true;
+        verifiedSym = true;
       }
     }
-    if (verifiedSpecChars === false) {
+    if (verifiedSym === false) {
       console.log("no spec characters!");
       passVerify();
     }
@@ -140,7 +149,7 @@ if (hasNumbers) {
   let verifiedNumbers = false;
   for (let index = 0; index < passLength; index++) {
     let possibleNumbers = tentativePassword[index];
-    // console.log(possibleSpec)
+    // console.log(possibleNumbers)
     if (possibleNumbers == "1" || possibleNumbers == "2" || possibleNumbers == "3" || possibleNumbers == "4" || possibleNumbers == "5" || possibleNumbers == "6" || possibleNumbers == "7" || possibleNumbers == "8" || possibleNumbers == "9" || possibleNumbers == "0") {
       verifiedNumbers = true;
     }

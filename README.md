@@ -1,8 +1,8 @@
-# Challenge-3
+# Password Generator
 
 ## Description
 
-For this assignment I was tasked with using a starter code to finish creating a random password generator. For this assignment I will be using Javascript to complete the tasks.
+For this assignment I was tasked with using a starter code to finish creating a random password generator. For this assignment I used javascript to complete the assignment. This task would be very useful to achieve to learn how to make a function for the user to use in their everyday life.
 
 ## Installation
 
@@ -10,7 +10,7 @@ N/A
 
 ## Usage
 
-This application will be used by the user so a random password can be created easily. This will help the user with security on their local device.
+This application will be used by the user so a random password can be created easily. This will help the user with security on their local device. It can be applied in ways to help protect the user and using random characters to create a completely unique password.
 
 ## Credits
 
