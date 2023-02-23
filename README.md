@@ -53,4 +53,6 @@ GIVEN I need a new, secure password
 
 [Password Generator](https://pintodrop.github.io/Challenge-3/)
 
+## Screen Shots
+
 [Deployed Website](/images/Deplyed-website.jpg)

@@ -9,6 +9,8 @@ const passPrompt = () => {
   console.log("Password length " + passLength);
     if (isNaN(passLength) == true || passLength < 8 || passLength > 128) {
       alert("Password must be between 8 & 128 characters");
+      passPrompt();
+      return;
     }
       
       hasNumbers = confirm("Would you like to include numbers?");
