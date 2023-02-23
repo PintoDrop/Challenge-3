@@ -1,3 +1,5 @@
+// This section was used to test out some code ideas but ultimately wasn't used in the final product.
+
 // Assignment code here
 /* var generateBtn = {
   password: "Cool",
