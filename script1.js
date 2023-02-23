@@ -25,10 +25,10 @@ const passPrompt = () => {
 };
 
 const passGenerate = () => {
-  let lowerString = "abcdefghijklmnopqrstuvwxyz ";
-  let upperString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
-  let numString = "0123456789 ";
-  let symbolString = "!@#$%^&*() ";
+  let lowerString = "abcdefghijklmnopqrstuvwxyz";
+  let upperString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let numString = "0123456789";
+  let symbolString = "!@#$%^&*()";
   let chosenString = "";
   let password = "";
 
@@ -57,15 +57,44 @@ const passGenerate = () => {
   return password;
 };
 
-let tentativePassword;
-const passVerify = () => {
+// let tentativePassword;
+function passVerify(){
+// const passVerify = () => {
   tentativePassword = passGenerate();
+  console.log(tentativePassword)
   if (hasLowercase) {
     let verifiedLower = false;
     for (let index = 0; index < passLength; index++) {
       let possibleLower = tentativePassword[index];
       console.log(possibleLower);
-      if (possibleLower == "a" ||possibleLower == "b" || possibleLower == "c" ||possibleLower == "d" ||possibleLower == "e" || possibleLower == "f" || possibleLower == "g" || possibleLower == "h" || possibleLower == "i" || possibleLower == "j" || possibleLower == "k" || possibleLower == "l" || possibleLower == "m" || possibleLower == "n" || possibleLower == "o" || possibleLower == "p" || possibleLower == "q" || possibleLower == "r" || possibleLower == "s" || possibleLower == "t" || possibleLower == "u" || possibleLower == "v" || possibleLower == "w" || possibleLower == "x" ||possibleLower == "y" || possibleLower == "z") {
+      if (
+        possibleLower == "a" ||
+        possibleLower == "b" ||
+        possibleLower == "c" ||
+        possibleLower == "d" ||
+        possibleLower == "e" ||
+        possibleLower == "f" ||
+        possibleLower == "g" ||
+        possibleLower == "h" ||
+        possibleLower == "i" ||
+        possibleLower == "j" ||
+        possibleLower == "k" ||
+        possibleLower == "l" ||
+        possibleLower == "m" ||
+        possibleLower == "n" ||
+        possibleLower == "o" ||
+        possibleLower == "p" ||
+        possibleLower == "q" ||
+        possibleLower == "r" ||
+        possibleLower == "s" ||
+        possibleLower == "t" ||
+        possibleLower == "u" ||
+        possibleLower == "v" ||
+        possibleLower == "w" ||
+        possibleLower == "x" ||
+        possibleLower == "y" ||
+        possibleLower == "z"
+      ) {
         verifiedLower = true;
       }
     }
@@ -80,7 +109,18 @@ const passVerify = () => {
     for (let index = 0; index < passLength; index++) {
       let possibleSpec = tentativePassword[index];
       // console.log(possibleSpec)
-      if (possibleSpec == "!" ||possibleSpec == "@" || possibleSpec == "#" || possibleSpec == "$" || possibleSpec == "%" || possibleSpec == "^" || possibleSpec == "&" || possibleSpec == "*" || possibleSpec == "(" || possibleSpec == ")") {
+      if (
+        possibleSpec == "!" ||
+        possibleSpec == "@" ||
+        possibleSpec == "#" ||
+        possibleSpec == "$" ||
+        possibleSpec == "%" ||
+        possibleSpec == "^" ||
+        possibleSpec == "&" ||
+        possibleSpec == "*" ||
+        possibleSpec == "(" ||
+        possibleSpec == ")"
+      ) {
         verifiedSpecChars = true;
       }
     }
@@ -89,7 +129,13 @@ const passVerify = () => {
       passVerify();
     }
   }
+  console.log("tentative", password)
+  return tentativePassword
 };
+
+// let password=passVerify()
+
+
 if (hasNumbers) {
   let verifiedNumbers = false;
   for (let index = 0; index < passLength; index++) {
@@ -104,6 +150,7 @@ if (hasNumbers) {
     passVerify();
   }
 }
+
 if (hasUppercase) {
   let verifiedUpper = false;
   for (let index = 0; index < passLength; index++) {
@@ -122,7 +169,7 @@ if (hasUppercase) {
 document.getElementById("generate").addEventListener("click", () => {
   passPrompt();
   let newPassword = passVerify();
-  console.log(newPassword);
+  // console.log(newPassword);
   document.getElementById("password").innerHTML = newPassword;
-  return;
+  // return tentativePassword
 });
